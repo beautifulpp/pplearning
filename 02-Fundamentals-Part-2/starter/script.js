@@ -76,32 +76,33 @@ Let's go back to Mark and John comparing their BMIs! This time, let's use object
 2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects). Store the BMI value to a property, and also return it from the method.
 3. Log to the console who has the higher BMI, together with the full name and the respective BMI. Example: "John Smith's BMI (28.3) is higher than Mark Miller's (23.9)!"
 
-TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
+// TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
 
-GOOD LUCK 😀
-*/
+// GOOD LUCK 😀
+// */
 
-const Mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
-    calcBMI: function () {
-        this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
-    }
-};
+// const Mark = {
+//     fullName: 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function () {
+//         this.bmi = this.mass / (this.height * this.height);
+//         return this.bmi;
+//     }
+// };
 
-const John = {
-    fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
-    calcBMI: function () {
-        return this.mass / (this.height * this.height);
-    }
-}
+// const John = {
+//     fullName: 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function () {
+//         return this.mass / (this.height * this.height);
+//     }
+// }
 
 
-// console.log(Mark.calcBMI());
-// console.log(Mark.bmi);
+// // console.log(Mark.calcBMI());
+// // console.log(Mark.bmi);
 
-console.log(`${Mark.calcBMI() > John.calcBMI() ? Mark.fullName : John.fullName}'s BMI(${Mark.calcBMI() > John.calcBMI() ? Mark.calcBMI() : John.calcBMI()}) is higher than ${Mark.calcBMI() < John.calcBMI() ? Mark.fullName : John.fullName}'s ${Mark.calcBMI() < John.calcBMI() ? Mark.calcBMI() : John.calcBMI()}!`);
+// console.log(`${Mark.calcBMI() > John.calcBMI() ? Mark.fullName : John.fullName}'s BMI(${Mark.calcBMI() > John.calcBMI() ? Mark.calcBMI() : John.calcBMI()}) is higher than ${Mark.calcBMI() < John.calcBMI() ? Mark.fullName : John.fullName}'s ${Mark.calcBMI() < John.calcBMI() ? Mark.calcBMI() : John.calcBMI()}!`);
+azdsgzdg
