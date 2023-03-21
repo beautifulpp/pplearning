@@ -105,4 +105,45 @@ Let's go back to Mark and John comparing their BMIs! This time, let's use object
 // // console.log(Mark.bmi);
 
 // console.log(`${Mark.calcBMI() > John.calcBMI() ? Mark.fullName : John.fullName}'s BMI(${Mark.calcBMI() > John.calcBMI() ? Mark.calcBMI() : John.calcBMI()}) is higher than ${Mark.calcBMI() < John.calcBMI() ? Mark.fullName : John.fullName}'s ${Mark.calcBMI() < John.calcBMI() ? Mark.calcBMI() : John.calcBMI()}!`);
-azdsgzdg
+
+// console.log('Lifting weights repetition 1');
+// console.log('Lifting weights repetition 2');
+// console.log('Lifting weights repetition 3');
+// console.log('Lifting weights repetition 4');
+// console.log('Lifting weights repetition 5');
+// console.log('Lifting weights repetition 6');
+// console.log('Lifting weights repetition 7');
+// console.log('Lifting weights repetition 8');
+// console.log('Lifting weights repetition 9');
+// console.log('Lifting weights repetition 10');
+
+// for(let rep = 1; rep <=10; rep++){
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2037-1990,
+    'teacher',
+    ['Michael','Peter','Steven'],
+    true
+];
+
+const types = [];
+
+for(let i = 0; i<jonasArray.length; i++){
+    if(typeof(jonasArray[i]) === 'number'){break};
+    console.log(jonasArray[i],typeof(jonasArray[i]));
+    // types[i] = typeof(jonasArray[i]);
+     types.push(typeof(jonasArray[i]));
+};
+console.log(types);
+
+// const years = [1990,2009,2016,2021];
+// const ages = [];
+// for(let i = 0;i <years.length;i++){
+//     ages.push(2023-years[i]);
+// };
+// console.log(ages);
