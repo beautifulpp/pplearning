@@ -122,28 +122,77 @@ Let's go back to Mark and John comparing their BMIs! This time, let's use object
 // }
 
 
-const jonasArray = [
-    'Jonas',
-    'Schmedtmann',
-    2037-1990,
-    'teacher',
-    ['Michael','Peter','Steven'],
-    true
-];
+// const jonasArray = [
+//     'Jonas',
+//     'Schmedtmann',
+//     2037-1990,
+//     'teacher',
+//     ['Michael','Peter','Steven'],
+//     true
+// ];
 
-const types = [];
+// const types = [];
 
-for(let i = 0; i<jonasArray.length; i++){
-    if(typeof(jonasArray[i]) === 'number'){break};
-    console.log(jonasArray[i],typeof(jonasArray[i]));
-    // types[i] = typeof(jonasArray[i]);
-     types.push(typeof(jonasArray[i]));
-};
-console.log(types);
+// for(let i = 0; i<jonasArray.length; i++){
+//     if(typeof(jonasArray[i]) === 'number'){break};
+//     console.log(jonasArray[i],typeof(jonasArray[i]));
+//     // types[i] = typeof(jonasArray[i]);
+//      types.push(typeof(jonasArray[i]));
+// };
+// console.log(types);
 
 // const years = [1990,2009,2016,2021];
-// const ages = [];
+// const ages = []; 
 // for(let i = 0;i <years.length;i++){
 //     ages.push(2023-years[i]);
 // };
 // console.log(ages);
+
+// for(let i = jonasArray.length-1; i>=0;i--){
+//     console.log(i,jonasArray[i]);
+// }
+
+
+// for(let exercise = 1;exercise <4;exercise++){
+//     console.log(`————————Starting exercise ${exercise}`);
+//     for(let rep = 1;rep<6;rep++){
+//         console.log(`Exercise ${exercise}:Lifting weight repetition ${rep}`);
+//     }
+// }
+
+// let rep =1;
+// while(rep<=10){
+//     console.log(`Lifting weight repetition ${rep}`);
+//     rep++;
+// }
+
+//  
+
+const bills = [22,295,176,440,37,105,10,1100,86,52];
+const tips = [];
+const totals = [];
+
+
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+  };
+
+  for(let i =0;i<bills.length;i++){
+    tips.push(calcTip(bills[i]));
+    totals.push(bills[i]+tips[i]);
+  };
+//   console.log(tips,totals);
+
+
+
+  const calcAverage = function(arr){
+    let sum=0;
+  for(let i =0;i<arr.length;i++){
+    // let sum=0;
+    // sum = sum+arr[i];
+    sum+=arr[i];
+  };
+  return sum/arr.length;
+}
+
+console.log(calcAverage(totals));
