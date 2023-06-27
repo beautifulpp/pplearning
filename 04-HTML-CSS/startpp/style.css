@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(140, 185, 140);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+p {
+  margin-bottom: 20px;
+}
+
+.first {
+  color: brown;
+}
+
+#your-name {
+  background-color: rgb(145, 98, 162);
+  border: 3px solid #444;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+a {
+  background-color: yellowgreen;
+}
+#something {
+  width: 400px;
+  height: 200px;
+}
+
+#your-name h2 {
+  color: olivedrab;
+}
