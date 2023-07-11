@@ -11,19 +11,22 @@
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 document.querySelector('.number').textContent = secretNumber;
 // document.querySelector('.message').textContent = 'correct number';
-const score = 20;
+var score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
   if (!guess) {
-    document.querySelector('.message').textContent = 'no munber';
+    document.querySelector('.message').textContent = 'no number';
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'correct number!';
   } else if (guess > secretNumber) {
     document.querySelector('.message').textContent = 'higher number!';
     score--;
+    document.querySelector('.score').textContent = score;
   } else if (guess < secretNumber) {
     document.querySelector('.message').textContent = 'lower number!';
+    score--;
+    document.querySelector('.score').textContent = score;
   }
 });
