@@ -9,24 +9,48 @@
 // console.log(document.querySelector('.guess').value);
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.number').textContent = secretNumber;
+
 // document.querySelector('.message').textContent = 'correct number';
-var score = 20;
+let score = 20;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
+  //when there is no input
   if (!guess) {
     document.querySelector('.message').textContent = 'no number';
-  } else if (guess === secretNumber) {
+  }
+
+  //when player is wins
+  else if (guess === secretNumber) {
     document.querySelector('.message').textContent = 'correct number!';
-  } else if (guess > secretNumber) {
-    document.querySelector('.message').textContent = 'higher number!';
-    score--;
-    document.querySelector('.score').textContent = score;
-  } else if (guess < secretNumber) {
-    document.querySelector('.message').textContent = 'lower number!';
-    score--;
-    document.querySelector('.score').textContent = score;
+    document.querySelector('body').style.backgroundColor = 'green';
+
+    document.querySelector('.number').style.width = '30rem';
+    document.querySelector('.number').textContent = secretNumber;
+  }
+
+  //when guess is too high
+  else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = 'higher number!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'you lose the game!';
+      document.querySelector('.score').textContent = 0;
+    }
+  }
+
+  //when guess is too low
+  else if (guess < secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = 'lower number!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = 'you lose the game!';
+      document.querySelector('.score').textContent = 0;
+    }
   }
 });
