@@ -15,7 +15,7 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     displayMessage('no number');
   }
-//规格和i；h
+
   //when player is wins
   else if (guess === secretNumber) {
     displayMessage('correct number');
