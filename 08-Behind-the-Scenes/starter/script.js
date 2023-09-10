@@ -59,11 +59,80 @@
 // var addExpr = function (a, b) {
 //   return a + b;
 // };
-if (!numProducts) {
-  deleteShoppingCar();
-}
-var numProducts = 10;
+// if (!numProducts) {
+//   deleteShoppingCar();
+// }
+// var numProducts = 10;
 
-function deleteShoppingCar() {
-  console.log('All products deleted!');
-}
+// function deleteShoppingCar() {
+//   console.log('All products deleted!');
+// }
+
+
+// console.log(this);
+
+// const calcAge = function (birthYear) {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// }
+// calcAge(1990)
+
+
+// const calcAgeArrow = birthYear => {
+//   console.log(2037 - birthYear);
+//   console.log(this);
+// }
+// calcAgeArrow(1991);
+
+// const GPP = {
+//   year: 1990,
+//   calcAge: function () {
+//     console.log(2037 - this.year)
+//   }
+// }
+// GPP.calcAge();
+
+// const matiada = {
+//   year: 2017,
+// };
+// matiada.calcAge = GPP.calcAge;
+// matiada.calcAge();
+
+// const f = GPP.calcAge;
+// f()
+
+// const GPP = {
+//   firstName: 'G',
+//   year: 1990,
+//   calcAge: function () {
+//     // console.log(this);
+//     console.log(2037 - this.year);
+//     //soluton one
+//     // const self = this;
+//     // const isMillenial = function () {
+//     //   // console.log(this.year >= 1986 && this.year <= 1996)
+//     //   console.log(self.year >= 1986 && self.year <= 1996)
+//     // };
+
+
+//     const isMillenial = () => {
+//       // console.log(this.year >= 1986 && this.year <= 1996)
+//       console.log(this.year >= 1986 && this.year <= 1996)
+//     };
+
+//     isMillenial();
+//   },
+//   // greet: () => {
+//   //   console.log(`Hey ${this.firstName}`)
+//   // },
+// }
+// // GPP.greet();
+// GPP.calcAge();
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+
+};
+addExpr(2, 3);
+// console.log(addExpr(2, 3));
