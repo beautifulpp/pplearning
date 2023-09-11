@@ -68,7 +68,6 @@
 //   console.log('All products deleted!');
 // }
 
-
 // console.log(this);
 
 // const calcAge = function (birthYear) {
@@ -76,7 +75,6 @@
 //   console.log(this);
 // }
 // calcAge(1990)
-
 
 // const calcAgeArrow = birthYear => {
 //   console.log(2037 - birthYear);
@@ -114,7 +112,6 @@
 //     //   console.log(self.year >= 1986 && self.year <= 1996)
 //     // };
 
-
 //     const isMillenial = () => {
 //       // console.log(this.year >= 1986 && this.year <= 1996)
 //       console.log(this.year >= 1986 && this.year <= 1996)
@@ -129,10 +126,52 @@
 // // GPP.greet();
 // GPP.calcAge();
 
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
 
-};
-addExpr(2, 3);
+// };
+// addExpr(2, 3);
 // console.log(addExpr(2, 3));
+
+//
+
+// const me = {
+//   name: 'GPP',
+//   age: 33,
+// };
+// const friend = me;
+// friend.age = 27;
+// console.log(friend.age);
+// console.log(me.age);
+
+//primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+//reference types
+const Jessica = {
+  firstName: 'jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+const marriedJessica = Jessica;
+marriedJessica.lastName = 'Davis';
+console.log('before marriage:', Jessica);
+console.log('After marrige:', marriedJessica);
+
+//copying types
+const Jessica2 = {
+  firstName: 'jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['a', 'b'],
+};
+const jessicaCopy = Object.assign({}, Jessica2);
+jessicaCopy.lastName = 'Davis';
+jessicaCopy.family = ['c'];
+// jessicaCopy.family.push('c');
+console.log('before marriage:', Jessica2);
+console.log('After marrige:', jessicaCopy);
