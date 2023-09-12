@@ -41,7 +41,9 @@ const restaurant = {
   },
 
   orderPasta: function (ing1, ing2, ing3) {
-    console.log(`Here is your delicious pasta with ${ing1},${ing2} and ${ing3}`);
+    console.log(
+      `Here is your delicious pasta with ${ing1},${ing2} and ${ing3}`
+    );
   },
 };
 
@@ -116,7 +118,6 @@ const [x3 = 1, y3 = 1, z3 = 1] = [8, 9];
 console.log(x3, y3, z3);
 //result: 8,9,1
 
-
 const arr3 = [7, 8, 9];
 const badNewArr = [1, 2, arr3[0], arr3[1], arr3[2]];
 console.log(badNewArr);
@@ -131,8 +132,8 @@ const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 console.log(newMenu);
 
 const mainMenuCopy = [...restaurant.mainMenu];
-const menu = [...restaurant.startMenu, ...restaurant.mainMenu]
-console.log(menu)
+const menu = [...restaurant.startMenu, ...restaurant.mainMenu];
+console.log(menu);
 
 //Tips iterables: arrays,strings,maps,sets. Not objects before ES2018
 const str = 'Jonas';
@@ -145,7 +146,7 @@ console.log(letters);
 // restaurant.orderPasta(...ingredients);
 
 //objects
-const newRestaurant = { foundedin: 1991, ...restaurant, founder: 'gpp' }
+const newRestaurant = { foundedin: 1991, ...restaurant, founder: 'gpp' };
 console.log(newRestaurant);
 const restaurantCopy = { ...newRestaurant };
 restaurantCopy.name = 'ristorante roma';
@@ -161,7 +162,10 @@ const [a4, b4, ...others] = [1, 2, 3, 4];
 console.log(a4, b4, others);
 // 1 2 [3,4]
 
-const [Pizza, , Risotto, Focaccia, ...others2] = [...restaurant.mainMenu, ...restaurant.startMenu];
+const [Pizza, , Risotto, Focaccia, ...others2] = [
+  ...restaurant.mainMenu,
+  ...restaurant.startMenu,
+];
 console.log(Pizza, Risotto, Focaccia, others2);
 
 //objects  需要对应名字
