@@ -45,6 +45,10 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1},${ing2} and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
 };
 
 restaurant.orderDelivery({
@@ -176,3 +180,77 @@ const { sat, ...weekdays } = restaurant.openingHours;
 console.log(sat, weekdays);
 
 // 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+};
+console.log(add(1, 2, 3, 4, 15));
+
+const t = [23, 5, 7];
+console.log(add(...t));
+
+restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
+
+console.log('-------OR-------');
+//Tips 3 property of logical operators( &&  || ):
+// 1)  use any data type, retrun any data type,short-circuiting
+console.log(3 || 'pp'); // 3
+console.log('pp' || 3); // 'pp'
+console.log('' || 'pp'); //'pp'
+console.log(true || 3); //true
+console.log(undefined || null); //null
+console.log(undefined || 0 || '' || 'pp' || 23 || null); //'pp'
+
+restaurant.numGuests = 23;
+const guestes1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guestes1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+// summarize 'OR' return the first truthy value of all the operands, or simply the last value if all of them are falsy
+
+console.log('-------AND-------');
+console.log(0 && 'pp'); //0
+console.log(7 && 'pp'); //'pp'
+console.log('pp' && 23 && null && 'g'); //null
+//practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+//summarize 'AND' return the first falsy value or the last value if all of them are truthy
+
+restaurant.numGuests = 0;
+const guests3 = restaurant.numGuests || 10;
+console.log(guests3);
+
+//Tips the Nullish Coalescing Operator : null and undefined (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'pp',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// console.log(rest1, rest2);
+
+rest1.numGuests ??= 10;
+rest2.numGuests ||= 10;
+console.log(rest1, rest2);
+
+// rest1.owner = rest1.owner && 'gpp ';
+// rest2.owner = rest2.owner && 'gpp ';
+rest1.owner &&= 'GPP';
+rest2.owner &&= 'GPP';
+console.log(rest1, rest2);
