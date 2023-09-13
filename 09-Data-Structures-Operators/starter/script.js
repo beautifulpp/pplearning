@@ -87,10 +87,12 @@ const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
 const c = arr[2];
-//Tips using thr destructure assignment
+
+//Tips using the destructure assignment
 const [x2, y2, z2] = arr;
 console.log(x2, y2, z2);
 console.log(arr);
+
 //Tips 跳过某个取值用空格“a, , b ”
 let [main, , secondary] = restaurant.categories;
 console.log(main, secondary);
@@ -152,6 +154,7 @@ const restaurantCopy = { ...newRestaurant };
 restaurantCopy.name = 'ristorante roma';
 console.log(newRestaurant.name, restaurantCopy.name);
 
+// 1) Destructuring
 //Tips spread,because on right side of "="
 const arr4 = [1, 2, ...[3, 4]];
 console.log(arr4);
@@ -171,3 +174,5 @@ console.log(Pizza, Risotto, Focaccia, others2);
 //objects  需要对应名字
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(sat, weekdays);
+
+// 2) Functions
