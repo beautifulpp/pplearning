@@ -505,8 +505,39 @@ const game = {
 };
 // 1.
 for (const [num, scoredPlayer] of game.scored.entries()) {
-  console.log(`Goal ${num}: ${scoredPlayer}`);
+  console.log(`Goal ${num + 1}: ${scoredPlayer}`);
 }
 
 // 2.
+const teamOdds = Object.values(game.odds);
+console.log(teamOdds);
+let sum = 0;
+for (let i of teamOdds) {
+  sum += i;
+}
+console.log(sum / teamOdds.length);
+
+// 3.
+for (const [teamNames, teamOdds] of Object.entries(game.odds)) {
+  // console.log(teamNames, teamOdds);
+  const teamString = teamNames === 'x' ? 'draw' : `game[teamNames]`;
+  console.log(`Odd of ${teamString}: ${teamOdds}`);
+}
+
 //
+
+for (let scoredPlayers of game.scored) {
+  console.log(scoredPlayers);
+}
+
+// scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+
+// const scorers = {};
+// for (const player of game.scored) {
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+// console.log(scorers);
+
+const scorers = {};
+scorers.x = 'fvyug';
+console.log(scorers);
