@@ -546,13 +546,44 @@ const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto']);
 console.log(ordersSet);
 console.log(new Set('ordersSet'));
 console.log(ordersSet.size);
-console.log(ordersSet.has('Pizza'));
-console.log(ordersSet.has('Bread'));
+console.log(ordersSet.has('Pizza')); // true
+console.log(ordersSet.has('Bread')); // false
 ordersSet.add('Garlic Bread');
 ordersSet.add('Garlic Bread');
+console.log(ordersSet);
 ordersSet.delete('Risotto');
+console.log(ordersSet);
+ordersSet.clear(ordersSet);
+console.log(ordersSet);
 
 //Example
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = new Set(staff);
-console.log(2222);
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+//Tips Map
+const rest = new Map();
+rest.set('name', 'CLHIO');
+rest.set(1, 'sdf,shdiof');
+console.log(rest.set(2, 'asief,sidjfg'));
+rest.set('catef', ['jsiodf', 'sjdiof']).set('open', 11).set('close', 23);
+rest.set(true, 'we opened').set(false, 'we closed');
+console.log(rest.get(true));
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+console.log(rest.has('name'));
+rest.delete(1);
+console.log(rest.has(1));
+console.log(rest.size);
+rest.clear();
+console.log(rest);
+
+const arr2 = [1, 2];
+rest.set(arr2, 'test');
+console.log(rest.get(arr2));
+
+rest.set(document.querySelector('h1'), 'heading');
+console.log(rest);
