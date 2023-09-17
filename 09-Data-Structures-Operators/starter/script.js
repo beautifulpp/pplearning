@@ -530,14 +530,32 @@ for (let scoredPlayers of game.scored) {
   console.log(scoredPlayers);
 }
 
-// scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-
-// const scorers = {};
-// for (const player of game.scored) {
-//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
-// }
-// console.log(scorers);
-
+// bonus
 const scorers = {};
-scorers.x = 'fvyug';
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
 console.log(scorers);
+
+//Tips Set
+const ordersSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto']);
+const ordersSet2 = new Set('Pasta', 'Pizza', 'Pizza', 'Risotto');
+console.log(ordersSet, ordersSet2);
+console.log(new Set('ordersSet'));
+console.log(new Set(['ordersSet']));
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.cle ar();
+console.log(ordersSet);
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+const staff = ['Pasta', 'Pizza', 'Pizza', 'Risotto'];
+const staffUnique = new Set([staff]);
+const staffUnique2 = new Set(staff);
+console.log(staffUnique, staffUnique2);
