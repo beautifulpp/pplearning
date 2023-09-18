@@ -558,8 +558,9 @@ console.log(ordersSet);
 
 //Example
 const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+const staffUnique = new Set(staff); // set(3){'Waiter','Chef','Manager'}
+const staffUnique2 = [...new Set(staff)]; // ['Waiter','Chef','Manager']
+console.log(staffUnique, staffUnique2);
 console.log(
   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
 );
@@ -578,7 +579,7 @@ console.log(rest.has('name'));
 rest.delete(1);
 console.log(rest.has(1));
 console.log(rest.size);
-rest.clear();
+// rest.clear();
 console.log(rest);
 
 const arr2 = [1, 2];
@@ -587,3 +588,31 @@ console.log(rest.get(arr2));
 
 rest.set(document.querySelector('h1'), 'heading');
 console.log(rest);
+
+const question = new Map([
+  ['question', 'which is the best programming language in the world?'],
+  [1, 'c'],
+  [2, 'java'],
+  [3, 'javascript'],
+  ['correct', 3],
+  [true, 'correct'],
+  [false, 'try again'],
+]);
+console.log(question); //
+//Tips convert object to map
+console.log(Object.entries(openingHours2));
+const hoursMap = new Map(Object.entries(openingHours2));
+console.log(hoursMap);
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}:${value}`);
+}
+// const answer = Number(prompt('Your answer'));
+// console.log(question.get(question.get('correct') === answer));
+
+//Tips convert map to array
+// console.log(...question);
+console.log([...question]);
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
