@@ -662,3 +662,91 @@ for (const [key, value] of arrEvents) {
   let whichHalf = key < 45 ? '[firsthalf]' : '[secondhalf]';
   console.log(`${whichHalf} ${key} : ${value}`);
 }
+
+// Tips indexOf(),lastIndexOf(), slice()
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane[0]); //A
+console.log('B737'[0]); //B
+
+console.log(airline.length); //16
+console.log('B737'.length); //4
+
+console.log(airline.indexOf('P')); //2 第一个‘P’，从0开始计算，包含空格
+console.log(airline.lastIndexOf('P')); //8 最后一个‘P’，，从0开始计算，包含空格
+console.log(airline.indexOf('Portugal')); //8
+console.log(airline.indexOf('portugal')); //区分大小写故而不存在
+console.log('B737'.indexOf('3')); //6
+
+console.log(airline.slice(4)); // Air Portugal
+console.log(airline.slice(4, 7)); // Air
+console.log('B737'.slice(0, 1)); // B
+
+console.log(airline.slice(0, airline.indexOf(' '))); //获取第一个词TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //获取最后一个词Portugal
+
+console.log(airline.slice(8, -2)); // Portug
+console.log(airline.slice(-2)); // al
+
+const checkMiddleSeat = function (seat) {
+  //B and E are middle seats
+  const lastLetter = seat.slice(-1);
+  const pump =
+    lastLetter === 'B' || lastLetter === 'E'
+      ? 'your seat is middle seat'
+      : 'your seat is not middle seat';
+  console.log(pump);
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('123A');
+checkMiddleSeat('E');
+
+// Tips toLowerCase(), toUpperCase(), trim()
+console.log(airline.toLowerCase()); // tap air portugal
+console.log('Jonas'.toUpperCase()); // JONAS
+
+// fix capitalization in name
+const passenger = 'joNaS';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = ' HellO@JonaS.Io  \n';
+const lowerEmail = loginEmail.toLowerCase();
+const trimEmail = lowerEmail.trim();
+console.log(trimEmail);
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// Tips replacing
+const priceGB = '288,97￡';
+const priceUS = priceGB.replace('￡', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement = 'All passengers come to barding door 23. Barding door 23!';
+console.log(announcement.replace('door', 'gate'));
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Tips return booleans
+const plane2 = 'A320neo';
+console.log(plane2.includes('A320'));
+console.log(plane2.startsWith('A320'));
+if (plane2.startsWith('A') && plane2.endsWith('neo')) {
+  console.log('Part of the New ARirbus family');
+};
+
+//practice excercise
+const checkBaggage = function(){
+  const baggage = checkBaggage.toLowerCase();
+  if(baggage.)
+
+
+}
+checkBaggage('i have a Laptop, some Food and a pocket knife');
+checkBaggage('i have some socks and camera');
+checkBaggage('got some snacks and a gun for protection')
+
