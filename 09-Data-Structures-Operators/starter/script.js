@@ -745,7 +745,7 @@ const checkBaggage = function(){
   if(baggage.)
 
 
-}
+};
 checkBaggage('i have a Laptop, some Food and a pocket knife');
 checkBaggage('i have some socks and camera');
 checkBaggage('got some snacks and a gun for protection')
