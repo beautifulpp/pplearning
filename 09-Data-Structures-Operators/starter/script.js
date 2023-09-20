@@ -753,21 +753,56 @@ checkBaggage('i have some socks and camera');
 checkBaggage('got some snacks and a gun for protection');
 
 // Tips split and join
-console.log('a+nice+string'.split('+'));
-console.log('Jonas Schmedtmann'.split(' '));
+console.log('a+nice+string'.split('+')); // ['a','nice','string']
+console.log('Jonas Schmedtmann'.split(' ')); //['Jonas','Schmedtmann']
 const [firstName, secondName] = 'Jonas Schmedtmann'.split(' ');
-console.log(firstName, secondName);
+console.log(firstName, secondName); //Jonas Schmedtann
 const newName = ['Mr.', firstName, secondName.toUpperCase()].join('-');
-console.log(newName);
+console.log(newName); // Mr.-Jonas-SCHMEDTANN
+
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+//   for (let n of names) {
+//     namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
 
 const capitalizeName = function (name) {
   const names = name.split(' ');
   const namesUpper = [];
   for (let n of names) {
-    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
   }
   console.log(namesUpper.join(' '));
 };
 
 capitalizeName('jessica ann smith davis');
 capitalizeName('jonas schmedtmann');
+
+//Tips padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(17, '+')); // +++Go to gate 23!
+console.log('Jonas'.padEnd(17, '-')); // Jonas------------
+console.log(message.padStart(17, '+').padEnd(20, '+')); // +++Go to gate 23!+++
+
+const maskCreditCard = function (number) {
+  // const str = toString(number);
+  const str = number + '';
+  // console.log(str.slice(-4).padStart(13, '*'));
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(467567875586));
+console.log(maskCreditCard('sdhoigjhsrthsrhraoi345er'));
+
+//Tips  repeat
+const message2 = 'Bad weather...';
+console.log(message2.repeat(3)); //Bad weather...Bad weather...Bad weather...
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+planesInLine(5);
