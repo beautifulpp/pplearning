@@ -737,16 +737,37 @@ console.log(plane2.includes('A320'));
 console.log(plane2.startsWith('A320'));
 if (plane2.startsWith('A') && plane2.endsWith('neo')) {
   console.log('Part of the New ARirbus family');
-};
+}
 
 //practice excercise
-const checkBaggage = function(){
-  const baggage = checkBaggage.toLowerCase();
-  if(baggage.)
-
-
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed to board');
+  } else {
+    console.log('You are allowed to board');
+  }
 };
-checkBaggage('i have a Laptop, some Food and a pocket knife');
+checkBaggage('i have a Laptop, some Food and a pocket Knife');
 checkBaggage('i have some socks and camera');
-checkBaggage('got some snacks and a gun for protection')
+checkBaggage('got some snacks and a gun for protection');
 
+// Tips split and join
+console.log('a+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+const [firstName, secondName] = 'Jonas Schmedtmann'.split(' ');
+console.log(firstName, secondName);
+const newName = ['Mr.', firstName, secondName.toUpperCase()].join('-');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+  for (let n of names) {
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
