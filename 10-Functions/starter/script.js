@@ -84,3 +84,13 @@ const transformer = function (str, fn) {
 // js uses callbacks all the time
 transformer('javascript is the best language!', upperFirstWord);
 transformer('javascript is the best language!', oneWord);
+
+//
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greet('Hello')('GPP');
