@@ -67,3 +67,20 @@ function foo2(v1, v2, v3) {
 }
 foo2(v1, v2, v3);
 console.log(v1, v2, v3); // [1] {a: 2} {a: 3}
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+// Higher-order function
+const transformer = function (str, fn) {
+  console.log(`The Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+// js uses callbacks all the time
+transformer('javascript is the best language!', upperFirstWord);
+transformer('javascript is the best language!', oneWord);
