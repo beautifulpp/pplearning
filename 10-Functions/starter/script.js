@@ -129,4 +129,55 @@ const eurowings = {
 };
 
 const book = lufthansa.book;
-book(32, 'Baby');
+// book(32, 'Baby'); NOT work
+
+// Call method
+book.call(eurowings, 23, 'HIUHO');
+console.log(eurowings);
+book.call(lufthansa, 345, 'FTYFY');
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+book.call(swiss, 578, 'Marerf');
+
+// Apply method
+const fightData = [234, 'FOONF'];
+book.apply(swiss, fightData);
+book.call(swiss, ...fightData); //同上
+
+// Bing method
+//book.call(eurowings, 23, 'HIUHO');
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+bookEW(789, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('PZJ');
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
+
+const newaddVat = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+console.log(newaddVat(0.23)(100));
