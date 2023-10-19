@@ -249,3 +249,26 @@ poll.displayResults.call({ answers: [5, 2, 3] }, 'string')
 
 // const btnPoll = document.querySelector('.poll');
 // btnPoll.addEventListener('click', poll.registerNewAnswer);
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+//Tips IIFE:Immediately Invoked Function Expression
+(function () {
+  console.log('This will never run again');
+  const isPriavate = 23;
+})();
+console.log(isPriavate);
+(() => { console.log('This will also never run again') })();
+
+
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  }
+};
+const booker = secureBooking();
