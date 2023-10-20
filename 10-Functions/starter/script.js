@@ -219,22 +219,28 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section 😃
   answers: new Array(4).fill(0),
 
-  registerNewAnswer: function () {
-    prompt(`What is your favourite programming language?
-    0: JavaScript
-    1: Python
-    2: Rust
-    3: C++
-    (Write option number)`);
-    return displayResults;
+  registerNewAnswer() {
+    const answer = Number(
+      prompt(
+        `${this.question}\n${this.options.join(', \n')}\n(Write option number)`
+      )
+    );
+    if (typeof answer === 'number' && answer < this.answers.length) {
+      this.answers[answer]++;
+    }
+    this.displayResults();
+    this.displayResults('String');
   },
-  displayResults: function (type) {
-    if (typeof type === Array) {
-      console.log(type);
-    } else if (typeof type === String) {
-      console.log(`Poll results are ` + type);
+
+  displayResults(type = 'Array') {
+    if (type === 'Array') {
+      console.log(this.answers);
+    } else if (type === 'String') {
+      console.log(`Poll results are ${this.answers.join(', ')}`);
     }
   },
 };
 const btnPoll = document.querySelector('.poll');
-btnPoll.addEventListener('click', poll.registerNewAnswer);
+btnPoll.addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'String');
