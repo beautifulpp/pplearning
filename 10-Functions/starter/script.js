@@ -232,15 +232,54 @@ const poll = {
     this.displayResults('String');
   },
 
-  displayResults(type = 'Array') {
-    if (type === 'Array') {
+  displayResults(type = 'array') {
+    if (type === 'array') {
       console.log(this.answers);
-    } else if (type === 'String') {
+    } else if (type === 'string') {
       console.log(`Poll results are ${this.answers.join(', ')}`);
     }
   },
 };
+
 const btnPoll = document.querySelector('.poll');
 btnPoll.addEventListener('click', poll.registerNewAnswer.bind(poll));
 
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'String');
+
+// poll.registerNewAnswer();
+
+document
+  .querySelector('.poll')
+  .addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+// poll.displayResults();
+
+poll.displayResults.call({ answers: [5, 2, 3] });
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+
+// const btnPoll = document.querySelector('.poll');
+// btnPoll.addEventListener('click', poll.registerNewAnswer);
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+//Tips IIFE:Immediately Invoked Function Expression
+(function () {
+  console.log('This will never run again');
+  const isPriavate = 23;
+})();
+console.log(isPriavate);
+(() => {
+  console.log('This will also never run again');
+})();
+
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+const booker = secureBooking();
