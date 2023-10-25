@@ -270,7 +270,7 @@ runOnce();
   console.log('This will never run again');
   const isPriavate = 23;
 })();
-console.log(isPriavate);
+// console.log(isPriavate);
 (() => {
   console.log('This will also never run again');
 })();
@@ -283,3 +283,29 @@ const secureBooking = function () {
   };
 };
 const booker = secureBooking();
+booker();
+booker();
+booker();
+
+
+//Example 1
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  }
+};
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  }
+}
+g();//a;f=f{cl(a*2)}
+f();//46
+console.dir(f);
+
+h();//b;f=f{cl(b*2)}
+f();//1554
+console.dir(f);
