@@ -71,10 +71,69 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+// Tips The Slice(起，止) method
 let arr = ['a', 'b', 'c', 'd', 'e'];
 console.log(arr.slice(2)); //['c','d','e']
 console.log(arr.slice(2, 4)); //['c','d']
-console.log(arr.slice(-2)); //['d','e']
+console.log(arr.slice(-1)); //['e']
+console.log(arr.slice()); //['a', 'b', 'c', 'd', 'e']
+console.log([...arr]); //['a', 'b', 'c', 'd', 'e']
+/*PS*/ console.log(...arr); //a b c d e
+
+//Tips the Splice(起，长度) method(change the original arr)
+// console.log(arr.slice(2)); //['c','d','e']
+console.log(arr); //['a', 'b', 'c', 'd']
+arr.splice(-3);
+console.log(arr); //['a']
+arr.splice(1, 2); //从第二位开始，切俩
+console.log(arr); //['a', 'd']
+
+//Tips the Reverse method(change the original arr too)
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['1', '2', '3'];
+console.log(arr2.reverse()); //['5', '4', '3', '2', '1']
+console.log(arr2); //['3', '2', '1']
+
+//Tips the Concat method
+const letter = arr.concat(arr2);
+console.log(letter); //['a', 'b', 'c', 'd', 'e',  '3', '2', '1']
+console.log([...arr, ...arr2]); //['a', 'b', 'c', 'd', 'e',  '3', '2', '1']
+console.log(...arr); //a,b,c,d,e
+const letter2 = { ...arr };
+console.log(letter2); //{0: 'a', 1: 'b', 2: 'c', 3: 'd', 4: 'e'}
+
+//Tips the Join method
+console.log(letter.join('-')); //a-b-c-d-e-3-2-1
+
+//Tips the At method
+arr = [23, 11, 46];
+console.log(arr[0]); //23
+console.log(arr.at(0)); //23
+//old getting last array element
+console.log(arr[arr.length - 1]); //46
+console.log(arr.slice(-1)[0]); //46
+console.log(arr.at(-1)); //46
+console.log(arr.at(-2)); //11
+
+console.log('jonas'.at(-3)); //n
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: you withdrew ${Math.abs(movement)}`);
+  }
+}
+console.log('----forEach----');
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`Movement ${index + 1}: you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${index + 1}: you withdrew ${Math.abs(movement)}`);
+  }
+});
