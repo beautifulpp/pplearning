@@ -1,3 +1,36 @@
 {
-    "recommendations": []
+  "recommendations": [],
+
+  "security.workspace.trust.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.iconTheme": "Monokai Pro Icons",
+
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "BUG",
+      "color": "#333",
+      "backgroundColor": "#CD6155"
+    },
+    {
+      "text": "执行",
+      "color": "#333",
+      "backgroundColor": "#AF7AC5"
+    },
+    {
+      "text": "Tips",
+      "color": "#333",
+      "backgroundColor": "#1A9A7B"
+    },
+    {
+      "text": "Summarize",
+      "color": "#333",
+      "backgroundColor": "#4169E1"
+    }
+  ],
+  "window.zoomLevel": 1,
+  "editor.wordWrap": "on",
+  "todohighlight.defaultStyle": {}
 }
