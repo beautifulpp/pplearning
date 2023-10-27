@@ -65,11 +65,33 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+/////////////////////////////////////////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1} you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1} yyou wothdrew ${movement}`);
+  }
+}
+console.log('------forEach------');
+movements.forEach(function (movement, i, array) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1} you deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1} yyou wothdrew ${movement}`);
+  }
+});
+
+//forEach with Map
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
+  ['GBP', 'Great Britain Pound'],
 ]);
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}:${value}`);
+});
 
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -137,3 +159,12 @@ movements.forEach(function (movement, index, array) {
     console.log(`Movement ${index + 1}: you withdrew ${Math.abs(movement)}`);
   }
 });
+//forEach with Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique); //Set(3) {'USD', 'GBP', 'EUR'}
+currenciesUnique.forEach(function (value, _, set) {
+  console.log(`${value}:${value}`);
+});
+/*USD:USD
+  GBP:GBP
+  EUR:EUR */
