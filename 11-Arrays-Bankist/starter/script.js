@@ -87,7 +87,7 @@ displayMovements(account1.movements);
 /////////////////////////////////////////////////
 // LECTURES
 /////////////////////////////////////////////////
-// Tips The Slice(起，止) method
+// Tips The Slice(起，止) method(not change the original arr)
 // let arr = ['a', 'b', 'c', 'd', 'e'];
 // console.log(arr.slice(1, -2)); //['b','c']
 // console.log(arr.slice(2, 4)); //['c','d']
@@ -135,7 +135,7 @@ displayMovements(account1.movements);
 
 // /////////////////////////////////////////////////
 // //Tips forEach with array
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // // for (const movement of movements) {
 // for (const [i, movement] of movements.entries()) {
 //   if (movement > 0) {
@@ -192,16 +192,38 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
-const checkDogs = function (dogsJulia, dogsKate) {
-  const dogsJulia_correct = dogsJulia.slice(1, -2);
-  const allDogs = dogsJulia_correct.concat(dogsKate);
-  allDogs.forEach(function (dog, i) {
-    if (dog >= 3) {
-      console.log(`Dog number ${i + 1} is an adult,and is ${dog} years old`);
-    } else {
-      console.log(`Dog number ${i + 1} is still a puppy`);
-    }
-  });
+// const checkDogs = function (dogsJulia, dogsKate) {
+//   const dogsJulia_correct = dogsJulia.slice(1, -2);
+//   const allDogs = dogsJulia_correct.concat(dogsKate);
+//   allDogs.forEach(function (dog, i) {
+//     if (dog >= 3) {
+//       console.log(`Dog number ${i + 1} is an adult,and is ${dog} years old`);
+//     } else {
+//       console.log(`Dog number ${i + 1} is still a puppy`);
+//     }
+//   });
+// };
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+// checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+
+const eurToUsd = 1.1;
+const movementsUsd=movements.map(mov=> mov*eurToUsd);
+console.log(movements);
+console.log(movementsUsd);
+
+const movementsUsdfor = [];
+for(const mov of movements){
+  movementsUsdfor.push(mov*eurToUsd);
 };
-checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
-checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+console.log(movements);
+console.log(movementsUsdfor);
+
+const movementsDescriptions = movements.map((mov,index)=>
+   `Movement ${index + 1}: you ${mov>0?'deposited':'withdrew'} ${Math.abs(mov)}` );
+  // if (movements > 0) {
+  //       return`Movement ${index + 1}: you deposited ${movements}`;
+  //     } else {
+  //       return`Movement ${index + 1}: you withdrew ${Math.abs(movements)}`;
+  //     }
+  //   });
+  console.log(movementsDescriptions);   
